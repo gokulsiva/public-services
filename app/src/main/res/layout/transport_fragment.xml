@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:text="This is transport"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:id="@+id/textView" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:id="@+id/imageButton"
+        android:src="@mipmap/ic_bus_transport"
+        android:scaleType="centerCrop"
+        android:background="@android:color/white"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Click to get bus details"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
