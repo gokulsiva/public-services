@@ -16,6 +16,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.home_fragment,container,false);
+        v.setBackgroundColor(getResources().getColor(android.R.color.white));
         return v;
     }
 }

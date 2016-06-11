@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,51 +17,33 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by vignesh on 04-06-2016.
+ * Created by vignesh on 11-06-2016.
  */
-public class EducationFragment extends Fragment {
-
+public class RegularWater extends Fragment{
     public static String url = "";
-    public static String education_info = "";
+    public static String info = "";
     ProgressDialog loading;
     private ListView list;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.education_fragment,container,false);
-        list = (ListView) v.findViewById(R.id.educationView);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.transport_fragment,container,false);
         v.setBackgroundColor(getResources().getColor(android.R.color.white));
-        TextView text = (TextView) v.findViewById(R.id.education_info);
-        text.setText(education_info);
-        list.setClickable(true);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                detailed_hospital_view.hospital_name = EducationJsonParser.column2[position];
-                detailed_hospital_view.doctor_name = EducationJsonParser.column3[position];
-                detailed_hospital_view.address = EducationJsonParser.column4[position];
-                detailed_hospital_view.specality = EducationJsonParser.column5[position];
-                detailed_hospital_view.functioning = EducationJsonParser.column6[position];
-                detailed_hospital_view.lattitude = EducationJsonParser.column7[position];
-                detailed_hospital_view.longitude = EducationJsonParser.column8[position];
-                Fragment fragment = new detailed_hospital_view();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.mainFrame, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
-
-            }
-        });
+        list = (ListView) v.findViewById(R.id.listview);
+        TextView text = (TextView) v.findViewById(R.id.listview_info);
+        text.setText(info);
         return v;
     }
 
+
+
     private void showJSON(String json){
-        EducationJsonParser pj = new EducationJsonParser(json);
+        Log.v("ShowJson",json);
+        RegularWaterJsonParser pj = new RegularWaterJsonParser(json);
         pj.parseJSON();
         loading.dismiss();
-        HealthFragmentAdapter adapter = new HealthFragmentAdapter(getActivity(), EducationJsonParser.column2, EducationJsonParser.column3);
+        TransportFragmentAdapter adapter = new TransportFragmentAdapter(getActivity(), RegularWaterJsonParser.ids, RegularWaterJsonParser.column1, RegularWaterJsonParser.column2);
         list.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -101,6 +82,4 @@ public class EducationFragment extends Fragment {
 
     }
 
-
 }
-

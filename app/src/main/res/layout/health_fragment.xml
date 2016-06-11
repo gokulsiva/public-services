@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="50sp"
-    android:text="This is health"
-    android:textSize="40sp"
-    android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#06d9f0"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:id="@+id/health_info"
+        android:textColor="@android:color/black" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/healthView"
+        android:layout_below="@+id/health_info"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

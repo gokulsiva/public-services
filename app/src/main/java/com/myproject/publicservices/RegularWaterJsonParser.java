@@ -7,9 +7,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by vignesh on 05-06-2016.
+ * Created by vignesh on 11-06-2016.
  */
-public class ParseJSON {
+public class RegularWaterJsonParser {
     public static String[] ids;
     public static String[] column1;
     public static String[] column2;
@@ -23,7 +23,7 @@ public class ParseJSON {
 
     private String json;
 
-    public ParseJSON(String json){
+    public RegularWaterJsonParser(String json){
         this.json = json;
     }
 

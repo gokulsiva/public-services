@@ -3,6 +3,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Timeout_Error">Please connect to a NETWORK and try again</string>
+    <string name="Auth_Error">Authenticating user failure</string>
+    <string name="Server_Error">Server Error</string>
+    <string name="Network_Error">Network Error</string>
+    <string name="Parse_Error">Parse Error</string>
 
     <string name="action_settings">Settings</string>
 </resources>
